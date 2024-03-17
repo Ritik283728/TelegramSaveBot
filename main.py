@@ -113,7 +113,7 @@ def save(client: pyrogram.client.Client, message: pyrogram.types.messages_and_me
 				try:
 						handle_private(message,chatid,msgid)
 				except MessageEmpty as e:
-					bot.send_message(message.chat.id,f"**", reply_to_message_id=message.id)
+f"Error : {e}", reply_to_message_id=message.id)					bot.send_message(message.chat.id,f"**", reply_to_message_id=message.id)
 						continue
 				except pyrogram.errors.exceptions.TelegramError as e:
 					bot.send_message(message.chat.id,f"**", reply_to_message_id=message.id)
