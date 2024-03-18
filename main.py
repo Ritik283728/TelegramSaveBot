@@ -250,7 +250,33 @@ def get_message_type(msg: pyrogram.types.messages_and_media.message.Message):
 		msg.text
 		return "Text"
 	except: pass
+C = "/cancel"
+START_PIC = "https://graph.org/file/da97ceca70e55983b4891.png"
+TEXT = "👋 Hi, This is 'Paid Restricted Content Saver' bot Made with ❤️ by __**Team SPY**__."
 
+@gagan.on(events.NewMessage(pattern=f"^{C}"))
+async def start_command(event):
+    # Creating inline keyboard with buttons
+    buttons = [
+        [Button.inline("Cancel", data="cancel"),
+         Button.inline("Cancel", data="cancel")],
+        [Button.url("Join Channel", url="https://telegram.dog/dev_gagan")]
+    ]
+
+    # Sending photo with caption and buttons
+    await gagan.send_file(
+        event.chat_id,
+        file=START_PIC,
+        caption=TEXT,
+        buttons=buttons
+    )
+            
+TEXTING = """
+```
+Execute /batch command only when you 100% sure.
+Bcz /cancel event is removed to make bot work perfectly.
+Thanks - Team SPY
+	  
 
 USAGE = """**FOR PUBLIC CHATS**
 
