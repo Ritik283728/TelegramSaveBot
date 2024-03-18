@@ -280,9 +280,8 @@ then send post/s link__
 # ```
 
 # __note that space in between doesn't matter__
-# """
 
+C = "/cancel"
 
 # infinty polling
 bot.run()
-C = "/cancel"
