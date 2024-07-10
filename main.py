@@ -6,9 +6,6 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import time
 import os
 import threading
-import pyrogram.utils
-
-pyrogram.utils.MIN_CHANNEL_ID = -1009147483647
 import json
 
 with open('config.json', 'r') as f: DATA = json.load(f)
@@ -31,15 +28,15 @@ def downstatus(statusfile,message):
 		if os.path.exists(statusfile):
 			break
 
-	time.sleep(3)      
+	time.sleep(1)      
 	while os.path.exists(statusfile):
 		with open(statusfile,"r") as downread:
 			txt = downread.read()
 		try:
 			bot.edit_message_text(message.chat.id, message.id, f"__Downloaded__ : **{txt}**")
-			time.sleep(10)
+			time.sleep(1)
 		except:
-			time.sleep(5)
+			time.sleep(1)
 
 
 # upload status
@@ -48,15 +45,15 @@ def upstatus(statusfile,message):
 		if os.path.exists(statusfile):
 			break
 
-	time.sleep(3)      
+	time.sleep(1)      
 	while os.path.exists(statusfile):
 		with open(statusfile,"r") as upread:
 			txt = upread.read()
 		try:
 			bot.edit_message_text(message.chat.id, message.id, f"__Uploaded__ : **{txt}**")
-			time.sleep(10)
+			time.sleep(1)
 		except:
-			time.sleep(5)
+			time.sleep(1)
 
 
 # progress writter
@@ -150,7 +147,7 @@ def save(client: pyrogram.client.Client, message: pyrogram.types.messages_and_me
 					except Exception as e: bot.send_message(message.chat.id,f"**Error** : __{e}__", reply_to_message_id=message.id)
 
 			# wait time
-			time.sleep(3)
+			time.sleep(1)
 
 
 # handle private
